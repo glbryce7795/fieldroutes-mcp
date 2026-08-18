@@ -82,8 +82,9 @@ function createMcpServer() {
       dateEnd:    z.string().optional().describe("Filter end date (YYYY-MM-DD)"),
       status:     z.enum(["0","1","2"]).optional().describe("0=pending, 1=completed, 2=cancelled"),
     },
-  }, async (args) => {
-    const params = { customerID: args.customerID };
+    }, async (args) => {
+    const params = {};
+    if (args.customerID) params.customerID = args.customerID;
     if (args.dateStart) params.dateStart        = args.dateStart;
     if (args.dateEnd)   params.dateEnd          = args.dateEnd;
     if (args.status)    params.completionStatus = args.status;
