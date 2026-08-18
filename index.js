@@ -77,7 +77,7 @@ function createMcpServer() {
     title: "Get Customer Service History",
     description: "Completed and open service tickets for a customer.",
     inputSchema: {
-      customerID: z.string().describe("The FieldRoutes customer ID"),
+      customerID: z.string().optional().describe("The FieldRoutes customer ID"),
       dateStart:  z.string().optional().describe("Filter start date (YYYY-MM-DD)"),
       dateEnd:    z.string().optional().describe("Filter end date (YYYY-MM-DD)"),
       status:     z.enum(["0","1","2"]).optional().describe("0=pending, 1=completed, 2=cancelled"),
