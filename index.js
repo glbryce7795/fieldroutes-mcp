@@ -23,6 +23,7 @@ async function frGet(path, params = {}) {
     ...Object.fromEntries(Object.entries(params).map(([k, v]) => [k, String(v)])),
   });
   const url = `${BASE_URL}/${path}?${query.toString()}`;
+  console.log("API URL:", url.split("?")[0]);
   const res = await fetch(url, { headers: { "Accept": "application/json" } });
   if (!res.ok) {
     throw new Error(`FieldRoutes API error ${res.status} on ${path}: ${await res.text()}`);
