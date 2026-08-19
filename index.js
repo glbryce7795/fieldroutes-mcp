@@ -14,7 +14,7 @@ if (!AUTH_KEY || !AUTH_TOKEN || !SUBDOMAIN) {
   process.exit(1);
 }
 
-const BASE_URL = `https://${SUBDOMAIN}.pestroutes.com/api`;
+const BASE_URL = `https://${SUBDOMAIN}.fieldroutes.com/api`;
 
 async function frGet(path, params = {}) {
   const query = new URLSearchParams({
