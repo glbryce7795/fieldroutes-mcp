@@ -4,9 +4,9 @@ const { McpServer } = require("@modelcontextprotocol/sdk/server/mcp.js");
 const { StreamableHTTPServerTransport } = require("@modelcontextprotocol/sdk/server/streamableHttp.js");
 const { z } = require("zod");
 
-const AUTH_KEY   = process.env.FR_AUTH_KEY   || "";
-const AUTH_TOKEN = process.env.FR_AUTH_TOKEN || "";
-const SUBDOMAIN  = process.env.FR_SUBDOMAIN  || "";
+const AUTH_KEY   = (process.env.FR_AUTH_KEY   || "").trim();
+const AUTH_TOKEN = (process.env.FR_AUTH_TOKEN || "").trim();
+const SUBDOMAIN  = (process.env.FR_SUBDOMAIN  || "").trim();
 const PORT       = parseInt(process.env.PORT || "3000", 10);
 
 if (!AUTH_KEY || !AUTH_TOKEN || !SUBDOMAIN) {
